@@ -5,7 +5,7 @@ public class MovimientoInventario {
 
         private int idMovimiento;
         private int idProducto;
-        private String tipoMovimiento;   // ENTRADA o SALIDA
+        private String tipoMovimiento;
         private int cantidad;
         private String fechaMovimiento;
         private String descripcion;
