@@ -4,20 +4,18 @@ public class MovimientoInventario {
 
 
         private int idMovimiento;
-        private String tipoMovimiento;
+        private String tipo;
         private int cantidad;
         private String fechaMovimiento;
-        private String descripcion;
 
-        private Pedido pedido;
+        private Productos productos;
 
-    public MovimientoInventario(int idMovimiento, String tipoMovimiento, int cantidad, String fechaMovimiento, String descripcion, Pedido pedido) {
+    public MovimientoInventario(int idMovimiento, String tipo, int cantidad, String fechaMovimiento, Productos productos) {
         this.idMovimiento = idMovimiento;
-        this.tipoMovimiento = tipoMovimiento;
+        this.tipo = tipo;
         this.cantidad = cantidad;
         this.fechaMovimiento = fechaMovimiento;
-        this.descripcion = descripcion;
-        this.pedido = pedido;
+        this.productos = productos;
     }
 
     public int getIdMovimiento() {
@@ -28,12 +26,12 @@ public class MovimientoInventario {
         this.idMovimiento = idMovimiento;
     }
 
-    public String getTipoMovimiento() {
-        return tipoMovimiento;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setTipoMovimiento(String tipoMovimiento) {
-        this.tipoMovimiento = tipoMovimiento;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     public int getCantidad() {
@@ -52,31 +50,22 @@ public class MovimientoInventario {
         this.fechaMovimiento = fechaMovimiento;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public Productos getProductos() {
+        return productos;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
+    public void setProductos(Productos productos) {
+        this.productos = productos;
     }
 
     @Override
     public String toString() {
         return "MovimientoInventario{" +
                 "idMovimiento=" + idMovimiento +
-                ", tipoMovimiento='" + tipoMovimiento + '\'' +
+                ", tipo='" + tipo + '\'' +
                 ", cantidad=" + cantidad +
                 ", fechaMovimiento='" + fechaMovimiento + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", pedido=" + pedido +
+                ", productos=" + productos +
                 '}';
     }
 }

@@ -14,6 +14,7 @@ public class ProductosTestUnitaria {
 
     @BeforeEach
     public void setUp() {
+
         categoria = new Categoria(2, "Juegos y Entretenimiento");
         productos = new Productos(1, "Play Station 5", 250.00, 20, "19/1/2025", "Disponible", categoria);
     }
