@@ -1,12 +1,27 @@
-package com.distribuida.ventas_spring.model;
+package com.distribuida.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="productos")
 public class Productos {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column (name = "id_producto")
     private int idProducto;
+    @Column (name = "nombre")
     private String nombre;
+    @Column (name = "precio")
     private double precio;
+    @Column (name = "stock")
     private int stock;
+    @Column (name = "fecha_regristro")
     private String fechaRegistro;
+    @Column (name = "estado")
     private String estado;
+//inyeccion de dependencias
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
     private Categoria categoria;
 
     public Productos(int idProducto, String nombre, double precio, int stock, String fechaRegistro, String estado, Categoria categoria) {
