@@ -33,9 +33,8 @@ public class PagosTestUnitaria {
                 () -> assertEquals("20/09/2025",pagos.getFechaPago()),
                 () -> assertEquals(pedido,pagos.getPedido())
         );
-
-
     }
+
 }
 
 
