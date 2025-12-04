@@ -15,7 +15,7 @@ public class Pagos {
         this.monto = monto;
         this.fecha_pago = fecha_pago;
     }
-
+//
     public int getId_pago() {
         return id_pago;
     }
