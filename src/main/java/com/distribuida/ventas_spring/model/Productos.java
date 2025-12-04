@@ -12,7 +12,7 @@ public class Productos {
 
 
 
-    public Producto(int id_producto, String nombre, double precio, int stock, String fecha_registro, String estado, int id_categoria) {
+    public Productos(int id_producto, String nombre, double precio, int stock, String fecha_registro, String estado, int id_categoria) {
         this.id_producto = id_producto;
         this.nombre = nombre;
         this.precio = precio;
