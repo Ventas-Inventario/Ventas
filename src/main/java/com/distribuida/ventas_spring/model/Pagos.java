@@ -2,42 +2,36 @@ package com.distribuida.ventas_spring.model;
 
 public class Pagos {
 
-    private int id_pago;
-    private int id_pedido;
-    private String metodo_pago;
+    private int idPago;
+
+    private String metodoPago;
     private double monto;
-    private String fecha_pago;
+    private String fechaPago;
 
-    public Pagos(int id_pago, int id_pedido, String metodo_pago, double monto, String fecha_pago) {
-        this.id_pago = id_pago;
-        this.id_pedido = id_pedido;
-        this.metodo_pago = metodo_pago;
+    private Pedido pedido;
+
+    public Pagos(int idPago, String metodoPago, double monto, String fechaPago, Pedido pedido) {
+        this.idPago = idPago;
+        this.metodoPago = metodoPago;
         this.monto = monto;
-        this.fecha_pago = fecha_pago;
-    }
-//
-    public int getId_pago() {
-        return id_pago;
+        this.fechaPago = fechaPago;
+        this.pedido = pedido;
     }
 
-    public void setId_pago(int id_pago) {
-        this.id_pago = id_pago;
+    public int getIdPago() {
+        return idPago;
     }
 
-    public int getId_pedido() {
-        return id_pedido;
+    public void setIdPago(int idPago) {
+        this.idPago = idPago;
     }
 
-    public void setId_pedido(int id_pedido) {
-        this.id_pedido = id_pedido;
+    public String getMetodoPago() {
+        return metodoPago;
     }
 
-    public String getMetodo_pago() {
-        return metodo_pago;
-    }
-
-    public void setMetodo_pago(String metodo_pago) {
-        this.metodo_pago = metodo_pago;
+    public void setMetodoPago(String metodoPago) {
+        this.metodoPago = metodoPago;
     }
 
     public double getMonto() {
@@ -48,22 +42,30 @@ public class Pagos {
         this.monto = monto;
     }
 
-    public String getFecha_pago() {
-        return fecha_pago;
+    public String getFechaPago() {
+        return fechaPago;
     }
 
-    public void setFecha_pago(String fecha_pago) {
-        this.fecha_pago = fecha_pago;
+    public void setFechaPago(String fechaPago) {
+        this.fechaPago = fechaPago;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
     @Override
     public String toString() {
         return "Pagos{" +
-                "id_pago=" + id_pago +
-                ", id_pedido=" + id_pedido +
-                ", metodo_pago='" + metodo_pago + '\'' +
+                "idPago=" + idPago +
+                ", metodoPago='" + metodoPago + '\'' +
                 ", monto=" + monto +
-                ", fecha_pago='" + fecha_pago + '\'' +
+                ", fechaPago='" + fechaPago + '\'' +
+                ", pedido=" + pedido +
                 '}';
     }
 }
