@@ -1,33 +1,30 @@
 package com.distribuida.ventas_spring.model;
 
 public class Productos {
-    private int id_producto;
+    private int idProducto;
     private String nombre;
     private double precio;
     private int stock;
-    private String fecha_registro;
+    private String fechaRegistro;
     private String estado;
-    private int id_categoria;
+    private Categoria categoria;
 
-
-
-
-    public Productos(int id_producto, String nombre, double precio, int stock, String fecha_registro, String estado, int id_categoria) {
-        this.id_producto = id_producto;
+    public Productos(int idProducto, String nombre, double precio, int stock, String fechaRegistro, String estado, Categoria categoria) {
+        this.idProducto = idProducto;
         this.nombre = nombre;
         this.precio = precio;
         this.stock = stock;
-        this.fecha_registro = fecha_registro;
+        this.fechaRegistro = fechaRegistro;
         this.estado = estado;
-        this.id_categoria = id_categoria;
+        this.categoria = categoria;
     }
 
-    public int getId_producto() {
-        return id_producto;
+    public int getIdProducto() {
+        return idProducto;
     }
 
-    public void setId_producto(int id_producto) {
-        this.id_producto = id_producto;
+    public void setIdProducto(int idProducto) {
+        this.idProducto = idProducto;
     }
 
     public String getNombre() {
@@ -54,12 +51,12 @@ public class Productos {
         this.stock = stock;
     }
 
-    public String getFecha_registro() {
-        return fecha_registro;
+    public String getFechaRegistro() {
+        return fechaRegistro;
     }
 
-    public void setFecha_registro(String fecha_registro) {
-        this.fecha_registro = fecha_registro;
+    public void setFechaRegistro(String fechaRegistro) {
+        this.fechaRegistro = fechaRegistro;
     }
 
     public String getEstado() {
@@ -70,24 +67,24 @@ public class Productos {
         this.estado = estado;
     }
 
-    public int getId_categoria() {
-        return id_categoria;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setId_categoria(int id_categoria) {
-        this.id_categoria = id_categoria;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     @Override
     public String toString() {
         return "Productos{" +
-                "id_producto=" + id_producto +
+                "idProducto=" + idProducto +
                 ", nombre='" + nombre + '\'' +
                 ", precio=" + precio +
                 ", stock=" + stock +
-                ", fecha_registro='" + fecha_registro + '\'' +
+                ", fechaRegistro='" + fechaRegistro + '\'' +
                 ", estado='" + estado + '\'' +
-                ", id_categoria=" + id_categoria +
+                ", categoria=" + categoria +
                 '}';
     }
 }
