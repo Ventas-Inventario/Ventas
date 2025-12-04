@@ -1,8 +1,7 @@
 package com.distribuida.ventas_spring.model;
 
-public class Movimiento_Inventario {
+public class MovimientoInventario {
 
-    public class MovimientoInventario {
 
         private int idMovimiento;
         private int idProducto;
@@ -85,4 +84,3 @@ public class Movimiento_Inventario {
         }
     }
 
-}
