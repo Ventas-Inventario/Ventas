@@ -1,4 +1,4 @@
-package com.distribuida.ventas_spring.model;
+package com.distribuida.model;
 
 public class Categoria {
 
