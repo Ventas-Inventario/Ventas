@@ -3,19 +3,15 @@ package com.distribuida.ventas_spring.model;
 public class Pagos {
 
     private int idPago;
-
     private String metodoPago;
     private double monto;
     private String fechaPago;
 
-    private Pedido pedido;
-
-    public Pagos(int idPago, String metodoPago, double monto, String fechaPago, Pedido pedido) {
+    public Pagos(int idPago, String metodoPago, double monto, String fechaPago) {
         this.idPago = idPago;
         this.metodoPago = metodoPago;
         this.monto = monto;
         this.fechaPago = fechaPago;
-        this.pedido = pedido;
     }
 
     public int getIdPago() {
@@ -50,14 +46,6 @@ public class Pagos {
         this.fechaPago = fechaPago;
     }
 
-    public Pedido getPedido() {
-        return pedido;
-    }
-
-    public void setPedido(Pedido pedido) {
-        this.pedido = pedido;
-    }
-
     @Override
     public String toString() {
         return "Pagos{" +
@@ -65,7 +53,6 @@ public class Pagos {
                 ", metodoPago='" + metodoPago + '\'' +
                 ", monto=" + monto +
                 ", fechaPago='" + fechaPago + '\'' +
-                ", pedido=" + pedido +
                 '}';
     }
 }
