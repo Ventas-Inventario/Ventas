@@ -1,16 +1,29 @@
 package com.distribuida.model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
-
+@Entity
+@Table(name = "cliente")
 public class Cliente {
-
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+@Column(name = "id_cliente")
     private int idCliente;
+@Column(name = "nombre")
     private String nombre;
+@Column(name = "apellido")
     private String apellido;
+@Column(name = "email")
     private String email;
+@Column(name = "telefono")
     private String telefono;
+@Column(name = "direccion")
     private String direccion;
+@Column(name = "fecha_registro")
     private Date fechaRegistro;
+
+public Cliente(){ }
 
     public Cliente(int idCliente, String nombre, String apellido, String email, String telefono, String direccion, Date fechaRegistro) {
         this.idCliente = idCliente;

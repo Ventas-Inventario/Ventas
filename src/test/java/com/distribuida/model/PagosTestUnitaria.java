@@ -5,8 +5,7 @@ package com.distribuida.model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class PagosTestUnitaria {
@@ -35,6 +34,38 @@ public class PagosTestUnitaria {
         );
     }
 
+    @Test
+    public void testPagosSetters() {
+        pagos.setIdPago(2);
+        pagos.setMetodoPago("Efectivo");
+        pagos.setMonto(75.90);
+        pagos.setFechaPago("01/12/2025");
+
+
+        assertAll("Validar datos Pagos - Setters",
+                () -> assertEquals(2,pagos.getIdPago()),
+                () -> assertEquals("Efectivo",pagos.getMetodoPago()),
+                () -> assertEquals(75.90,pagos.getMonto()),
+                () -> assertEquals("01/12/2025",pagos.getFechaPago())
+        );
+    }
+
+    @Test
+    public void testPagosToString() {
+        String str = pagos.toString();
+
+        assertAll("validar datos Pagos - ToString",
+                () -> assertTrue(str.contains("1")),
+                () -> assertTrue(str.contains("Tarjeta")),
+                () -> assertTrue(str.contains("50")),
+                () -> assertTrue(str.contains("20/09/2025"))
+
+
+
+
+        );
+
+    }
 }
 
 

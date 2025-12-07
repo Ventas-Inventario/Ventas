@@ -1,15 +1,25 @@
 package com.distribuida.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="movimientos_inventario")
 public class MovimientoInventario {
-
-
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @Column (name = "id_movimiento")
         private int idMovimiento;
+        @Column (name = "tipo")
         private String tipo;
+        @Column (name = "cantidad")
         private int cantidad;
+        @Column (name = "fecha")
         private String fechaMovimiento;
-
+        //inyeccion de dependencias
+        @ManyToOne
+        @JoinColumn(name = "id_producto")
         private Productos productos;
-
+public MovimientoInventario(){}
     public MovimientoInventario(int idMovimiento, String tipo, int cantidad, String fechaMovimiento, Productos productos) {
         this.idMovimiento = idMovimiento;
         this.tipo = tipo;
