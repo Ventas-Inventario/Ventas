@@ -15,7 +15,7 @@ public class MovimientoInventario {
         private int cantidad;
         @Column (name = "fecha")
         private String fechaMovimiento;
-
+        //inyeccion de dependencias
         @ManyToOne
         @JoinColumn(name = "id_producto")
         private Productos productos;
