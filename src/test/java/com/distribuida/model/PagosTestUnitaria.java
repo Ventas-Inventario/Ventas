@@ -1,27 +1,16 @@
 package com.distribuida.model;
 
-
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
-
 
 public class PagosTestUnitaria {
 
-
     private Pagos pagos;
-
-
     @BeforeEach
     public void setUp(){
-
         pagos = new Pagos(1,"Tarjeta",50,"20/09/2025");
-
-
     }
-
 
     @Test
     public void testPagosConstructor() {
@@ -30,7 +19,6 @@ public class PagosTestUnitaria {
                 () -> assertEquals("Tarjeta", pagos.getMetodoPago()),
                 () -> assertEquals(50, pagos.getMonto()),
                 () -> assertEquals("20/09/2025",pagos.getFechaPago())
-
         );
     }
 
@@ -40,7 +28,6 @@ public class PagosTestUnitaria {
         pagos.setMetodoPago("Efectivo");
         pagos.setMonto(75.90);
         pagos.setFechaPago("01/12/2025");
-
 
         assertAll("Validar datos Pagos - Setters",
                 () -> assertEquals(2,pagos.getIdPago()),
@@ -59,9 +46,6 @@ public class PagosTestUnitaria {
                 () -> assertTrue(str.contains("Tarjeta")),
                 () -> assertTrue(str.contains("50")),
                 () -> assertTrue(str.contains("20/09/2025"))
-
-
-
 
         );
 
