@@ -7,7 +7,7 @@ public class MovimientoInventario {
         private String tipo;
         private int cantidad;
         private String fechaMovimiento;
-
+    //inyeccion de dependencias
         private Productos productos;
 
     public MovimientoInventario(int idMovimiento, String tipo, int cantidad, String fechaMovimiento, Productos productos) {
