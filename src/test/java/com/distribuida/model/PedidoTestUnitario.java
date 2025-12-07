@@ -3,66 +3,58 @@ package com.distribuida.model;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PedidoTestUnitario {
 
     private Pedido pedido;
+    private Cliente cliente;
+    private Pagos pago;
 
     @BeforeEach
     public void setUp() {
-        pedido = new Pedido(
-                1,
-                10,
-                "2025-01-01",
-                "PENDIENTE",
-                12.5,
-                150.75
-        );
+
+        cliente = new Cliente(1, "Joseth", "Diaz", "diaz@gmail.com",
+                "0999252904", "Tumbaco", new Date());
+
+        pago = new Pagos(1, "Efectivo", 50.0, "2024-12-01");
+
+        pedido = new Pedido();
+        pedido.setIdPedido(10);
+        pedido.setCliente(cliente);
+        pedido.setPago(pago);
+        pedido.setFechaPedido(new Date());
+        pedido.setEstado("PENDIENTE");
+        pedido.setTotal(120.0);
+        pedido.setIva(20.0);
+        pedido.setTotalNeto(100.0);
     }
 
     @Test
-    public void pedidoTestConstructor() {
-        assertAll("Validar datos del Pedido - Constructor",
-                () -> assertEquals(1, pedido.getIdPedido()),
-                () -> assertEquals(10, pedido.getIdCliente()),
-                () -> assertEquals("2025-01-01", pedido.getFechaPedido()),
+    public void testPedidoSetters() {
+        assertAll("Validar Pedido con setters",
+                () -> assertEquals(10, pedido.getIdPedido()),
                 () -> assertEquals("PENDIENTE", pedido.getEstado()),
-                () -> assertEquals(12.5, pedido.getIva()),
-                () -> assertEquals(150.75, pedido.getTotalNeto())
+                () -> assertEquals(120.0, pedido.getTotal()),
+                () -> assertEquals(20.0, pedido.getIva()),
+                () -> assertEquals(100.0, pedido.getTotalNeto()),
+                () -> assertEquals(cliente, pedido.getCliente()),
+                () -> assertEquals(pago, pedido.getPago())
         );
     }
 
     @Test
-    public void pedidoTestSetters() {
-        pedido.setIdPedido(2);
-        pedido.setIdCliente(20);
-        pedido.setFechaPedido("2025-02-02");
-        pedido.setEstado("ENTREGADO");
-        pedido.setIva(10.0);
-        pedido.setTotalNeto(200.50);
-
-        assertAll("Validar datos del Pedido - Setters",
-                () -> assertEquals(2, pedido.getIdPedido()),
-                () -> assertEquals(20, pedido.getIdCliente()),
-                () -> assertEquals("2025-02-02", pedido.getFechaPedido()),
-                () -> assertEquals("ENTREGADO", pedido.getEstado()),
-                () -> assertEquals(10.0, pedido.getIva()),
-                () -> assertEquals(200.50, pedido.getTotalNeto())
-        );
-    }
-
-    @Test
-    public void pedidoTestToString() {
+    public void testPedidoToString() {
         String str = pedido.toString();
 
-        assertAll("Validar datos del Pedido - toString",
-                () -> assertTrue(str.contains("1")),
+        assertAll("Validar toString Pedido",
                 () -> assertTrue(str.contains("10")),
-                () -> assertTrue(str.contains("2025-01-01")),
                 () -> assertTrue(str.contains("PENDIENTE")),
-                () -> assertTrue(str.contains("12.5")),
-                () -> assertTrue(str.contains("150.75"))
+                () -> assertTrue(str.contains("120.0")),
+                () -> assertTrue(str.contains("20.0")),
+                () -> assertTrue(str.contains("100.0"))
         );
     }
 }

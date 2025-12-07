@@ -1,12 +1,24 @@
 package com.distribuida.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "pagos")
 public class Pagos {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idPago;
+
     private String metodoPago;
     private double monto;
     private String fechaPago;
 
+    // 🔹 Constructor vacío (REQUERIDO por JPA)
+    public Pagos() {
+    }
+
+    // 🔹 Constructor con parámetros
     public Pagos(int idPago, String metodoPago, double monto, String fechaPago) {
         this.idPago = idPago;
         this.metodoPago = metodoPago;
