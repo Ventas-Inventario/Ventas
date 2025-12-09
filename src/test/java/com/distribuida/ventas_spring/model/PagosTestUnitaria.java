@@ -21,7 +21,7 @@ public class PagosTestUnitaria {
 
     }
 
-///
+
     @Test
     public void testClienteConstructor() {
         assertAll("Validar datos Cliente - Contructor",

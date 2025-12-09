@@ -1,25 +1,41 @@
-package com.distribuida.ventas_spring.model;
+package com.distribuida.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "pedido_detalle")
 public class PedidoDetalle {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_detalle")
     private int idDetalle;
-    private int idPedido;
-    private int idProducto;
+
+    @ManyToOne
+    @JoinColumn(name = "id_pedido")
+    private Pedido pedido;
+
+    @ManyToOne
+    @JoinColumn(name = "id_producto")
+    private Productos producto;
+
+    @Column(name = "cantidad")
     private int cantidad;
+
+    @Column(name = "subtotal")
     private double subtotal;
 
     public PedidoDetalle() {}
 
-    public PedidoDetalle(int idDetalle, int idPedido, int idProducto,
+    public PedidoDetalle(int idDetalle, Pedido pedido, Productos producto,
                          int cantidad, double subtotal) {
         this.idDetalle = idDetalle;
-        this.idPedido = idPedido;
-        this.idProducto = idProducto;
+        this.pedido = pedido;
+        this.producto = producto;
         this.cantidad = cantidad;
         this.subtotal = subtotal;
     }
 
-    // Getters y Setters
     public int getIdDetalle() {
         return idDetalle;
     }
@@ -28,20 +44,20 @@ public class PedidoDetalle {
         this.idDetalle = idDetalle;
     }
 
-    public int getIdPedido() {
-        return idPedido;
+    public Pedido getPedido() {
+        return pedido;
     }
 
-    public void setIdPedido(int idPedido) {
-        this.idPedido = idPedido;
+    public void setPedido(Pedido pedido) {
+        this.pedido = pedido;
     }
 
-    public int getIdProducto() {
-        return idProducto;
+    public Productos getProducto() {
+        return producto;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
+    public void setProducto(Productos producto) {
+        this.producto = producto;
     }
 
     public int getCantidad() {
@@ -64,8 +80,8 @@ public class PedidoDetalle {
     public String toString() {
         return "PedidoDetalle{" +
                 "idDetalle=" + idDetalle +
-                ", idPedido=" + idPedido +
-                ", idProducto=" + idProducto +
+                ", pedido=" + pedido +
+                ", producto=" + producto +
                 ", cantidad=" + cantidad +
                 ", subtotal=" + subtotal +
                 '}';
