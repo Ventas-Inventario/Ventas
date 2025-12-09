@@ -8,10 +8,13 @@ public class Pagos {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_pago")
     private int idPago;
-
+    @Column(name = "metodo_pago")
     private String metodoPago;
+    @Column(name = "monto")
     private double monto;
+    @Column(name = "fecha_pago")
     private String fechaPago;
 
     // 🔹 Constructor vacío (REQUERIDO por JPA)
