@@ -39,10 +39,10 @@ public class MovimientoInventarioTestIntegracion {
 
     @Test
     public void testMovimientoInventarioFindOne(){
-        Optional<MovimientoInventario> movimientoInventario = movimientoInventarioRepository.findById(1);
+        Optional<MovimientoInventario> movimientoInventario = movimientoInventarioRepository.findById(10);
         assertTrue(movimientoInventario.isPresent());
-        assertEquals("ENTRADA",movimientoInventario.orElse(null).getTipo());
-        assertEquals(50,movimientoInventario.orElse(null).getCantidad());
+        assertEquals("SALIDA",movimientoInventario.orElse(null).getTipo());
+        assertEquals(10,movimientoInventario.orElse(null).getCantidad());
 
         System.out.println(movimientoInventario);
     }
