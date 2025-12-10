@@ -10,6 +10,7 @@ import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.boot.jdbc.test.autoconfigure.AutoConfigureTestDatabase;
 import org.springframework.test.annotation.Rollback;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,7 +50,33 @@ public class PagosTestIntegracion {
         System.out.println(pagos);
     }
 
+    @Test
+    public void testPagosSave(){
+        Pagos pagos = new Pagos(0,"Cash", 10.10, "12/05/2027");
 
+
+        Pagos pagoGuardado = pagosRepository.save(pagos);
+        assertNotNull(pagoGuardado);
+        Assertions.assertEquals("Cash", pagoGuardado.getMetodoPago());
+        Assertions.assertEquals(10.10, pagoGuardado.getMonto());
+    }
+
+    @Test
+    public void testPagosActualizar(){
+        Optional<Pagos> pagos3 =pagosRepository.findById(51);
+
+        pagos3.orElse(null).setMetodoPago("cambio");
+        pagos3.orElse(null).setMonto(11.15);
+        pagos3.orElse(null).setFechaPago("20/04/2028");
+
+
+        pagosRepository.save(pagos3.orElse(null));
+    }
+
+    @Test
+    public void testClienteBorrar(){
+        pagosRepository.deleteById(51);
+    }
 
 
 
