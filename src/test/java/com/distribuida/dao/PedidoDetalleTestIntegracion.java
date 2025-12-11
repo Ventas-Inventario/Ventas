@@ -77,6 +77,6 @@ public class PedidoDetalleTestIntegracion {
 
     @Test
     public void testPedidoDetalleBorrar() {
-        pedidoDetalleRepository.deleteById(3);
+        pedidoDetalleRepository.deleteById(4);
     }
 }

@@ -83,6 +83,6 @@ public class PedidoTestIntegracion {
 
     @Test
     public void testPedidoBorrar() {
-        pedidoRepository.deleteById(1);
+        pedidoRepository.deleteById(4);
     }
 }
