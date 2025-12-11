@@ -71,7 +71,7 @@ public class PedidoTestIntegracion {
 
     @Test
     public void testPedidoActualizar() {
-        Optional<Pedido> pedido = pedidoRepository.findById(1);
+        Optional<Pedido> pedido = pedidoRepository.findById(2);
         assertTrue(pedido.isPresent());
 
         Pedido p = pedido.get();
