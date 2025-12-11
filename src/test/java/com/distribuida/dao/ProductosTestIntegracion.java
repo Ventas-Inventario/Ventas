@@ -37,8 +37,8 @@ public class ProductosTestIntegracion {
     public void testProductosFindOne(){
         Optional<Productos> productos = productosRepository.findById(17);
         assertTrue(productos.isPresent());
-        assertEquals("PlayStation 5",productos.orElse(null).getNombre());
-        assertEquals(499.99,productos.orElse(null).getPrecio());
+        assertEquals("Nintendo Switch OLED",productos.orElse(null).getNombre());
+        assertEquals(349.9,productos.orElse(null).getPrecio());
 
         System.out.println(productos);
     }
