@@ -71,7 +71,7 @@ public class ProductosTestIntegracion {
 
         assertTrue(categoria.isPresent());
 
-        Optional<Productos> productos = productosRepository.findById(46);
+        Optional<Productos> productos = productosRepository.findById(48);
 
         assertTrue((productos.isPresent()));
 
@@ -93,10 +93,10 @@ public class ProductosTestIntegracion {
     }
     @Test
     public void testProductosDelete(){
-        if (productosRepository.existsById(46)){
-            productosRepository.deleteById(46);
+        if (productosRepository.existsById(48)){
+            productosRepository.deleteById(48);
         }
-        assertFalse(productosRepository.existsById(46));
+        assertFalse(productosRepository.existsById(48));
     }
 
 

@@ -12,8 +12,6 @@ public class Pagos {
     private int idPago;
     @Column(name = "metodo_pago")
     private String metodoPago;
-    @Column(name = "monto")
-    private double monto;
     @Column(name = "fecha_pago")
     private String fechaPago;
 
@@ -21,11 +19,9 @@ public class Pagos {
     public Pagos() {
     }
 
-    // 🔹 Constructor con parámetros
-    public Pagos(int idPago, String metodoPago, double monto, String fechaPago) {
+    public Pagos(int idPago, String metodoPago, String fechaPago) {
         this.idPago = idPago;
         this.metodoPago = metodoPago;
-        this.monto = monto;
         this.fechaPago = fechaPago;
     }
 
@@ -45,14 +41,6 @@ public class Pagos {
         this.metodoPago = metodoPago;
     }
 
-    public double getMonto() {
-        return monto;
-    }
-
-    public void setMonto(double monto) {
-        this.monto = monto;
-    }
-
     public String getFechaPago() {
         return fechaPago;
     }
@@ -66,8 +54,8 @@ public class Pagos {
         return "Pagos{" +
                 "idPago=" + idPago +
                 ", metodoPago='" + metodoPago + '\'' +
-                ", monto=" + monto +
                 ", fechaPago='" + fechaPago + '\'' +
                 '}';
     }
 }
+

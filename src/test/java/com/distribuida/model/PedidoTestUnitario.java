@@ -19,7 +19,7 @@ public class PedidoTestUnitario {
         cliente = new Cliente(1, "Joseth", "Diaz", "diaz@gmail.com",
                 "0999252904", "Tumbaco", new Date());
 
-        pago = new Pagos(1, "Efectivo", 50.0, "2024-12-01");
+        pago = new Pagos(1, "Efectivo", "2024-12-01");
 
         pedido = new Pedido();
         pedido.setIdPedido(10);

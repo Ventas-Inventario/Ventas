@@ -45,28 +45,25 @@ public class PagosTestIntegracion {
     public void testPagosFindOne(){
         Optional<Pagos> pagos = pagosRepository.findById(1);
         assertNotNull(pagos.isPresent());
-        Assertions.assertEquals("EFECTIVO", pagos.orElse(null).getMetodoPago());
-        Assertions.assertEquals(25.50, pagos.orElse(null).getMonto());
+        Assertions.assertEquals("Efectivo", pagos.orElse(null).getMetodoPago());
         System.out.println(pagos);
     }
 
     @Test
     public void testPagosSave(){
-        Pagos pagos = new Pagos(0,"Cash", 10.10, "12/05/2027");
+        Pagos pagos = new Pagos(0,"Cash", "12/05/2027");
 
 
         Pagos pagoGuardado = pagosRepository.save(pagos);
         assertNotNull(pagoGuardado);
         Assertions.assertEquals("Cash", pagoGuardado.getMetodoPago());
-        Assertions.assertEquals(10.10, pagoGuardado.getMonto());
     }
 
     @Test
     public void testPagosActualizar(){
-        Optional<Pagos> pagos3 =pagosRepository.findById(51);
+        Optional<Pagos> pagos3 =pagosRepository.findById(50 );
 
         pagos3.orElse(null).setMetodoPago("cambio");
-        pagos3.orElse(null).setMonto(11.15);
         pagos3.orElse(null).setFechaPago("20/04/2028");
 
 
@@ -75,7 +72,7 @@ public class PagosTestIntegracion {
 
     @Test
     public void testClienteBorrar(){
-        pagosRepository.deleteById(51);
+        pagosRepository.deleteById(53);
     }
 
 

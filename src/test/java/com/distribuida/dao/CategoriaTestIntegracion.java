@@ -53,7 +53,7 @@ public class CategoriaTestIntegracion {
 
     @Test
     public void testCategoriaActualizar(){
-        Optional<Categoria> categoria2 =categoriaRepository.findById(10);
+        Optional<Categoria> categoria2 =categoriaRepository.findById(11);
 
         categoria2.orElse(null).setNombreCategoria("Plastico22");
 
@@ -62,6 +62,6 @@ public class CategoriaTestIntegracion {
     }
     @Test
     public void testCategoriaBorrar(){
-        categoriaRepository.deleteById(10);
+        categoriaRepository.deleteById(11);
     }
 }

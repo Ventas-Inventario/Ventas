@@ -69,7 +69,7 @@ public class MovimientoInventarioTestIntegracion {
 
         assertTrue(productos.isPresent());
 
-        Optional<MovimientoInventario> movimientoInventario = movimientoInventarioRepository.findById(51);
+        Optional<MovimientoInventario> movimientoInventario = movimientoInventarioRepository.findById(52);
 
         assertTrue((movimientoInventario.isPresent()));
 
@@ -86,10 +86,10 @@ public class MovimientoInventarioTestIntegracion {
     }
     @Test
     public void testMovimientoInventarioDelete(){
-        if (movimientoInventarioRepository.existsById(51)){
-            movimientoInventarioRepository.deleteById(51);
+        if (movimientoInventarioRepository.existsById(52)){
+            movimientoInventarioRepository.deleteById(52);
         }
-        assertFalse(movimientoInventarioRepository.existsById(51));
+        assertFalse(movimientoInventarioRepository.existsById(52));
     }
 
 

@@ -71,7 +71,7 @@ public class PedidoTestIntegracion {
 
     @Test
     public void testPedidoActualizar() {
-        Optional<Pedido> pedido = pedidoRepository.findById(2);
+        Optional<Pedido> pedido = pedidoRepository.findById(52);
         assertTrue(pedido.isPresent());
 
         Pedido p = pedido.get();
@@ -83,6 +83,6 @@ public class PedidoTestIntegracion {
 
     @Test
     public void testPedidoBorrar() {
-        pedidoRepository.deleteById(4);
+        pedidoRepository.deleteById(52);
     }
 }
