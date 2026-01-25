@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+// mov
 @RestController
 @RequestMapping("/api/movimientoInventario")
 public class MovimientoInventarioController {
