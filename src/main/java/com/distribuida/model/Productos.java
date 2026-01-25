@@ -34,6 +34,7 @@ public Productos(){}
         this.categoria = categoria;
     }
 
+
     public int getIdProducto() {
         return idProducto;
     }
